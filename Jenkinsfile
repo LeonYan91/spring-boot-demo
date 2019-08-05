@@ -3,8 +3,22 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
+                sh 'mvn build'
+                sh 'cd ..'
+                sh 'pwd'
             }
         }
+        stage('test') {
+                    steps {
+                        sh 'mvn test'
+
+                    }
+                }
+        stage('deploy') {
+                    steps {
+                        sh 'echo deploy'
+                        sh 'cwd'
+                    }
+                }
     }
 }
