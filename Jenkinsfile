@@ -3,17 +3,12 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn compile'
+                //sh 'mvn compile'
                 sh 'cd ..'
                 sh 'pwd'
             }
         }
-        stage('test') {
-                    steps {
-                        sh 'mvn test'
 
-                    }
-                }
         stage('deploy') {
                     steps {
                         sh 'echo deploy'
