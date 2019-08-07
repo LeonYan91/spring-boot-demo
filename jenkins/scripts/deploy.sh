@@ -2,7 +2,7 @@
 
 echo '###############################'
 echo 'start deploy'
-#mvn package
+mvn package
 
 pwd
 echo '11111111'
