@@ -7,8 +7,6 @@ echo 'start deploy'
 pwd
 echo '11111111'
 ls /opt/tomcat/latest/webapps/
-echo '22222222'
-ls ./target/
 echo '33333333'
 whoami
 echo '44444444'
