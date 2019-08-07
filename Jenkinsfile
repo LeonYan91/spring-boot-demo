@@ -13,7 +13,10 @@ pipeline {
                     steps {
                         sh 'echo deploy'
                         //sh 'bash ./jenkins/scripts/deploy.sh'
-                        sh 'mvn package'
+                        //sh 'mvn package'
+                        sh 'pwd'
+                        sh 'ls target/'
+                        sh 'ls /opt/tomcat/latest/webapps/'
                         sh 'mv target/spring-boot-demo-0.0.1-SNAPSHOT.war /opt/tomcat/latest/webapps/bootdemo.war'
                     }
                 }
