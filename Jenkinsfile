@@ -12,7 +12,9 @@ pipeline {
         stage('deploy') {
                     steps {
                         sh 'echo deploy'
-                        sh 'bash ./jenkins/scripts/deploy.sh'
+                        //sh 'bash ./jenkins/scripts/deploy.sh'
+                        sh 'mvn package'
+                        sh 'mv target/spring-boot-demo-0.0.1-SNAPSHOT.war /opt/tomcat/latest/webapps/bootdemo.war'
                     }
                 }
     }
