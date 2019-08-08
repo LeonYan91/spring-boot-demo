@@ -19,7 +19,7 @@ pipeline {
                         sh 'echo 11111111'
                         sh 'ls / -l'
                         sh 'echo 22222222'
-                        sh 'ls /opt -l'
+                        sh 'ls /tmp20190808 -l'
                         sh 'echo 33333'
                         sh 'ls target/'
                         sh 'ls /opt/tomcat/latest/webapps/'
