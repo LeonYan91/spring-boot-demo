@@ -12,10 +12,9 @@ pipeline {
         stage('deploy') {
                     steps {
                         sh 'echo deploy'
-                        //sh 'bash ./jenkins/scripts/deploy.sh'
+                        sh 'bash ./jenkins/scripts/deploy.sh'
                         //sh 'mvn package'
 
-                        sh 'mkdir jenkinstest20190808'
                         sh 'echo 11111111'
                         sh 'ls / -l'
                         sh 'echo 22222222'
