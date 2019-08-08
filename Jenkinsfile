@@ -12,6 +12,7 @@ pipeline {
         stage('deploy') {
                     steps {
                         sh 'echo deploy'
+                        sh 'whoami'
                         //sh 'bash ./jenkins/scripts/deploy.sh'
                         //sh 'mvn package'
 
