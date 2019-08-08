@@ -11,19 +11,11 @@ pipeline {
 
         stage('deploy') {
                     steps {
-                        sh 'echo deploy'
-                        sh 'whoami'
-                        //sh 'bash ./jenkins/scripts/deploy.sh'
-                        //sh 'mvn package'
-
-                        sh 'echo 11111111'
-                        sh 'ls / -l'
-                        sh 'echo 22222222'
-                        sh 'ls /tmp20190808 -l'
-                        sh 'echo 33333'
-                        sh 'ls target/'
-                        sh 'ls /opt/tomcat/latest/webapps/'
-                        sh 'mv target/spring-boot-demo-0.0.1-SNAPSHOT.war /opt/tomcat/latest/webapps/bootdemo.war'
+                        sh 'echo packaging#####'
+                        sh 'mvn package'
+                        sh 'echo deploying#####'
+                        sh 'java -jar target/spring-boot-demo-0.0.1-SNAPSHOT.jar --server.port=3000'
+                        //sh 'mv target/spring-boot-demo-0.0.1-SNAPSHOT.war /opt/tomcat/latest/webapps/bootdemo.war'
                     }
                 }
     }
