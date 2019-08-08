@@ -17,9 +17,9 @@ pipeline {
 
                         sh 'pwd'
                         sh 'echo 11111111'
-                        sh 'ls / -l'
+                        shell 'ls / -l'
                         sh 'echo 22222222'
-                        sh 'ls /tmp20190808 -l'
+                        shell 'ls /tmp20190808 -l'
                         sh 'echo 33333'
                         sh 'ls target/'
                         sh 'ls /opt/tomcat/latest/webapps/'
