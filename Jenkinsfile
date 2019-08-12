@@ -12,8 +12,10 @@ pipeline {
         stage('deploy') {
                     steps {
                         sh 'echo packaging#####'
-                        sh '/bin/hostname'
+                        sh 'hostname -I'
                         sh 'echo deploying#####'
+
+                        sh 'ifconfig'
                         //sh 'java -jar target/spring-boot-demo-0.0.1-SNAPSHOT.jar --server.port=3000'
                         //sh 'mv target/spring-boot-demo-0.0.1-SNAPSHOT.war /opt/tomcat/latest/webapps/bootdemo.war'
                     }
