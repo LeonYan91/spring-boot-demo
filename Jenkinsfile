@@ -24,11 +24,13 @@ pipeline {
                         //sh 'scp target/spring-boot-demo-0.0.1-SNAPSHOT.jar root@10.148.0.4:/tmp'
                         //sh 'java -jar target/spring-boot-demo-0.0.1-SNAPSHOT.jar --server.port=3000'
                         //sh 'mv target/spring-boot-demo-0.0.1-SNAPSHOT.war /opt/tomcat/latest/webapps/bootdemo.war'
-
+                        withCredentials([string(credentialsId: 'server-pwd-global', variable: 'PWD')]) {
+                              sh 'echo $PWD'
+                            }
+                        sshagent (credentials: ['server-pwd-global']) {
+                                                sh 'scp -o StrictHostKeyChecking=no target/spring-boot-demo-0.0.1-SNAPSHOT.jar root@10.148.0.4:/tmp'
+                                              }
                     }
-                    sshagent (credentials: ['server-pwd-global']) {
-                                                                    sh 'scp -o StrictHostKeyChecking=no target/spring-boot-demo-0.0.1-SNAPSHOT.jar root@10.148.0.4:/tmp'
-                                                                  }
 
 
                 }
