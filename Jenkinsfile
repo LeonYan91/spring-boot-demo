@@ -13,7 +13,7 @@ pipeline {
                     steps {
                         sh 'echo packaging#####'
                         sh 'hostname'
-                        2810471a13e3
+                        //2810471a13e3
                         sh 'hostname -I'
                         sh 'echo deploying#####'
                         sh 'ls /root -l'
