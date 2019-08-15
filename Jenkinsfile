@@ -12,16 +12,18 @@ pipeline {
         stage('deploy') {
                     steps {
                         sh 'echo packaging#####'
+                        sh 'hostname'
                         sh 'hostname -I'
                         sh 'echo deploying#####'
+                        sh 'ls /root -l'
 
 
                         //sh 'scp target/spring-boot-demo-0.0.1-SNAPSHOT.jar root@10.148.0.4:/tmp'
                         //sh 'java -jar target/spring-boot-demo-0.0.1-SNAPSHOT.jar --server.port=3000'
                         //sh 'mv target/spring-boot-demo-0.0.1-SNAPSHOT.war /opt/tomcat/latest/webapps/bootdemo.war'
-                        sshagent (credentials: ['server-pwd']) {
-                                                sh 'scp -o StrictHostKeyChecking=no target/spring-boot-demo-0.0.1-SNAPSHOT.jar root@10.148.0.4:/tmp'
-                                              }
+                        //sshagent (credentials: ['server-pwd']) {
+                                                //sh 'scp -o StrictHostKeyChecking=no target/spring-boot-demo-0.0.1-SNAPSHOT.jar root@10.148.0.4:/tmp'
+                                              //}
                     }
 
 
