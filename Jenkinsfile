@@ -13,9 +13,12 @@ pipeline {
                     steps {
                         sh 'echo packaging#####'
                         sh 'hostname'
+                        2810471a13e3
                         sh 'hostname -I'
                         sh 'echo deploying#####'
                         sh 'ls /root -l'
+                        sh 'echo deploying#####'
+                        sh 'ls / -l'
 
 
                         //sh 'scp target/spring-boot-demo-0.0.1-SNAPSHOT.jar root@10.148.0.4:/tmp'
