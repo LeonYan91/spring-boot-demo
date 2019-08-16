@@ -27,7 +27,7 @@ pipeline {
                         //withCredentials([string(credentialsId: 'server-pwd-global', variable: 'PASSWORD')]) {
                               //sh 'echo $PASSWORD'
                             //}
-                        sshagent (credentials: ['server-pwd-global']) {
+                        sshagent (['server-pwd-global']) {
                                                 sh 'scp -o StrictHostKeyChecking=no target/spring-boot-demo-0.0.1-SNAPSHOT.jar root@10.148.0.4:/tmp'
                                               }
                     }
