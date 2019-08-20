@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn package'
+                //sh 'mvn package'
                 sh 'cd ..'
                 sh 'pwd'
             }
@@ -17,8 +17,8 @@ pipeline {
                         sh 'hostname -I'
                         sh 'echo deploying#####'
                         sh 'ls /root -l'
-                        sh 'echo deploying#####'
-                        sh 'echo ${env.JENKINS_HOME}'
+                        sh 'echo 1111 deploying#####'
+                        echo '${env.JENKINS_HOME}'
 
 
                         sh 'scp -i ${env.JENKINS_HOME}/.ssh/older_form_jfor_jjenkins target/spring-boot-demo-0.0.1-SNAPSHOT.jar root@10.148.0.4:/tmp'
