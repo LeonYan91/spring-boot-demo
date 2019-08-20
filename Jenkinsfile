@@ -18,10 +18,10 @@ pipeline {
                         sh 'echo deploying#####'
                         sh 'ls /root -l'
                         sh 'echo deploying#####'
-                        sh 'ls / -l'
+                        sh 'echo ${env.JENKINS_HOME}'
 
 
-                        //sh 'scp target/spring-boot-demo-0.0.1-SNAPSHOT.jar root@10.148.0.4:/tmp'
+                        sh 'scp -i ${env.JENKINS_HOME}/.ssh/older_form_jfor_jjenkins target/spring-boot-demo-0.0.1-SNAPSHOT.jar root@10.148.0.4:/tmp'
                         //sh 'java -jar target/spring-boot-demo-0.0.1-SNAPSHOT.jar --server.port=3000'
                         //sh 'mv target/spring-boot-demo-0.0.1-SNAPSHOT.war /opt/tomcat/latest/webapps/bootdemo.war'
                         //withCredentials([string(credentialsId: 'server-pwd-global', variable: 'PASSWORD')]) {
