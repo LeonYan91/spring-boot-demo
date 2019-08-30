@@ -1,12 +1,10 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent any
     stages {
         stage('build') {
             steps {
-                //sh 'mvn package'
-                sh 'cd ..'
-                sh 'pwd'
-            }
+                sh 'mvn package'
+
         }
 
         stage('deploy') {
